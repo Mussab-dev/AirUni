@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>AIR UNIVERSITY</title>
+    <style>
+        .bg-image {
+            background-image: url('https://www.au.edu.pk/pages/About/About_Images/visitau.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .navbar {
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 300;
+            padding: 15px 0;
+        }
+
+        .centered-paragraph {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            max-width: 600px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+
+        .card {
+            max-width: 350px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-group, .row {
+            justify-content: center;
+        }
+        .affiliated-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .affiliated-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .affiliated-section .underline {
+            display: inline-block;
+            width: 50px;
+            height: 3px;
+            background-color: #333;
+            margin: 10px auto;
+        }
+
+        .affiliated-institutes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .institute-card {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .institute-card img {
+            width: 70px;
+            margin-bottom: 15px;
+        }
+
+        .institute-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .institute-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .rank-section {
+            background: url('https://admission.com.pk/wp-content/uploads/2020/04/14188311_323894704609626_4070183215810831870_o.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .rank-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .rank-section h2, .rank-section h3, .rank-section p {
+            z-index: 2;
+            position: relative;
+        }
+
+        .rank-section .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            z-index: 2;
+            position: relative;
+        }
+
+        .stats-item {
+            text-align: center;
+            color: #fff;
+        }
+
+        .stats-item img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .stats-item h5 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .stats-item p {
+            font-size: 0.9rem;
+        }
+        .rank-section {
+            background: url('https://admission.com.pk/wp-content/uploads/2020/04/14188311_323894704609626_4070183215810831870_o.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .rank-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .rank-section h2, .rank-section h3, .rank-section p {
+            z-index: 2;
+            position: relative;
+        }
+
+        .rank-section .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            z-index: 2;
+            position: relative;
+        }
+
+        .stats-item {
+            text-align: center;
+            color: #fff;
+        }
+
+        .stats-item img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .stats-item h5 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .stats-item p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-image">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Air UNIVERSITY</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Faculty & Staff</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Alumni</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled text-white" aria-disabled="true">Visitors</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="centered-paragraph">
+        <h2>Welcome to Air University</h2>
+        <p>The mission of Air University is to achieve excellence in teaching and research for producing graduates with sound professional knowledge, integrity of character, a keen sense of social responsibility and a passion for lifelong learning. The University shall stand committed to creating an environment conducive for attracting the best students, faculty, and supporting staff for contributing to the development of a prosperous, peaceful, and enlightened society.</p>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://static3.bigstockphoto.com/1/0/4/large1500/401842358.jpg" class="card-img-top" alt="UnderGraduate Programs">
+                    <div class="card-body">
+                        <h5 class="card-title">UnderGraduate Programs</h5>
+                        <p class="card-text">Students' professional development and foundation building are both facilitated by their undergraduate education. Our diverse UG programmes turn students into successful people.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="https://images.ctfassets.net/2htm8llflwdx/5D43Q3Y0CcK9Nt0xyz9dwN/bce8ea8d410424bda01817832805b338/Shorelight_Study_in_USA_Landing_Page.jpg" class="card-img-top" alt="Master Programs">
+                    <div class="card-body">
+                        <h5 class="card-title">Master Programs</h5>
+                        <p class="card-text">Graduate programmes encourage students to be inquisitive and enhance their knowledge and expertise in specialised sectors. As a result, AU has the most MS-level programmes available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="https://www.shutterstock.com/image-photo/laptop-report-friends-learning-library-260nw-2475778113.jpg" class="card-img-top" alt="PHD Programs">
+                    <div class="card-body">
+                        <h5 class="card-title">PHD programs</h5>
+                        <p class="card-text">The goal of the PhD programmes at AU is to provide information that fuels economic progress. However, AU sought to produce knowledge for professional development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/happy-young-university-students-studying-with-books-library_216356-2114.jpg" class="card-img-top" alt="Student Portal">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Portal</h5>
+                        <p class="card-text">The student Portal also offers details about the courses that are offered, transcripts, email services, timetables, and exam schedules.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="https://images.stockcake.com/public/b/c/6/bc6efca8-1c07-4018-aa4d-e3256fc1c367_large/library-study-time-stockcake.jpg" class="card-img-top" alt="Leave Portal">
+                    <div class="card-body">
+                        <h5 class="card-title">Leave Portal</h5>
+                        <p class="card-text">An online leave system is used to streamline the process of approving leave requests. Features like Email Notification and Leaving Record are available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="https://www.visiblebody.com/hs-fs/hubfs/Stock%20images/Students%20sitting%20at%20a%20table%20in%20a%20library%20while%20learning%20and%20working%20on%20a%20laptop-1.jpeg?width=1000&name=Students%20sitting%20at%20a%20table%20in%20a%20library%20while%20learning%20and%20working%20on%20a%20laptop-1.jpeg" class="card-img-top" alt="Fee Portal">
+                    <div class="card-body">
+                        <h5 class="card-title">Fee Portal</h5>
+                        <p class="card-text">Fee Portal offers information on fees for enrolled students, and a communications platform will provide a Challan form for payments made to banks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-5">
+            <div class="col">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXzDthyf8I-dB_n1qc0wuCa5FCw0tMnTxGDg&s" class="card-img-top" alt="AU Multan Campus">
+                    <div class="card-body">
+                        <h5 class="card-title">AU Multan Campus</h5>
+                        <p class="card-text">The AU Multan Campus is dedicated to providing a high-quality education and an environment for personal and academic growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrZDM7soL3pz7UEMgVuqPMXuVL9XrW-H4xQ&s" class="card-img-top" alt="AU Kamra Campus">
+                    <div class="card-body">
+                        <h5 class="card-title">AU Kamra Campus</h5>
+                        <p class="card-text">AU Kamra Campus, part of Air University in Pakistan, focuses on engineering and technical education, especially aerospace and avionics. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1UKPzWoq3OmHedmKUrf_aCGGbR72lRuFsCA&s" class="card-img-top" alt="AU Islamabad">
+                    <div class="card-body">
+                        <h5 class="card-title">AU Islamabad</h5>
+                        <p class="card-text">AU Islamabad Campus is the main campus of Air University in Pakistan, offering a wide range of programs in engineering, business, social sciences, and IT</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9sol2nLZ5JmfVFDY_gQ5Sema9l_zs_69hhtwzyn_eSd9l-DHCQPRatrNM7IrsxF1XsVc&usqp=CAU" class="card-img-top" alt="AU Kharian Campus">
+                    <div class="card-body">
+                        <h5 class="card-title">AU Kharian</h5>
+                        <p class="card-text">AU Kharian Campus, an extension of Air University, serves the Gujrat region with programs in engineering, IT, and business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container affiliated-section">
+        <h2>AFFILIATED INSTITUTES</h2>
+        <div class="underline"></div>
+        <div class="affiliated-institutes">
+            <div class="institute-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT56a6cbIWK8Dfdahc7XW2RMI4MzkBgSz0snA&s" alt="Bilquis College Nur Khan Base, Rawalpindi">
+                <h5>Bilquis College Nur Khan Base, Rawalpindi</h5>
+                <p>The institution has been a focal point for the operations of the Pakistan Air Force Women Association (PAFWA) as well as for the education and training of women since it was founded in 1984.</p>
+            </div>
+            <div class="institute-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpiw9EzSqNGq717HX3k7pbvOrLTZlPS2p-Q&s" alt="College of Education, Peshawar">
+                <h5>College of Education, Peshawar</h5>
+                <p>The Institute is in a unique position to equip teachers for secondary schools as well as Montessori institutes.</p>
+            </div>
+            <div class="institute-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx5cQvx17KZKWCT25sMhOT7smyrOk7QxYAyA&s" alt="Aero Medical Institute, PAF Base, Masroor, Karachi">
+                <h5>Aero Medical Institute, PAF Base, Masroor, Karachi</h5>
+                <p>The largest airfield used by the Pakistan Air Force is PAF Base Masroor. It is located in the Sindh province's Mauripur neighborhood of Karachi.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid rank-section">
+        <h2>AIR UNIVERSITY RANKED</h2>
+        <h3>AIR UNIVERSITY ESTABLISHED SINCE</h3>
+        <h3><span class="display-3">2002</span> Year</h3>
+
+        <div class="row text-center mt-4">
+            <div class="col-md-4 offset-md-2">
+                <p>6<sup>th</sup> Times Impact Ranking</p>
+                <p>8<sup>th</sup> Research Intensive University by HEC</p>
+                <p>15<sup>th</sup> QS Ranked University among 232 Universities of Pakistan</p>
+            </div>
+            <div class="col-md-4">
+                <div class="stats">
+                    <div class="stats-item">
+                        <h5>Our Campuses</h5>
+                        <p>4</p>
+                    </div>
+                    <div class="stats-item">
+                        <h5>Degree Programs</h5>
+                        <p>69</p>
+                    </div>
+                    <div class="stats-item">
+                        <h5>Enrolled</h5>
+                        <p>8195</p>
+                    </div>
+                    <div class="stats-item">
+                        <h5>Faculty Members</h5>
+                        <p>477</p>
+                    </div>
+                    <div class="stats-item">
+                        <h5>Alumni Students</h5>
+                        <p>10837</p>
+                    </div>
+                    <div class="stats-item">
+                        <h5>Societies & Clubs</h5>
+                        <p>19</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YMN6l2WUKWz14UXJLZ4Nj96dZ/Dj6IqIc2lwLRDRICghcNVl3sEBhSOdwdllRmHA" crossorigin="anonymous"></script>
+</body>
+
+</html>
